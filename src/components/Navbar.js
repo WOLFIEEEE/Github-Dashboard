@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAuth0 } from '@auth0/auth0-react';
+import {Link, Router}  from "react-router-dom";
 
 const Navbar = () => {
   const {isAuthenticated, loginWithRedirect,logout,user,isLoading}=useAuth0();
@@ -10,7 +11,11 @@ const Navbar = () => {
     {isUser && user.picture && <img src={user.picture} alt={user.name}></img>}
     {isUser && user.name && <h4>Welcome , <strong>{user.name}</strong></h4>}
     {isUser ? (
-      <button onClick={()=>{logout({returnTo:window.location.origin})}}>Logout</button>
+      <div>
+        <Link to="/" className="btn">Home</Link>
+        <Link to="/Repodata" className="btn">Repos</Link>
+      <button className="btn" onClick={()=>{logout({returnTo:window.location.origin})}}>Logout</button>
+      </div>
     ):(
 <button onClick={loginWithRedirect}>Login</button>
     )}
@@ -23,7 +28,7 @@ const Wrapper = styled.nav`
   background: var(--clr-white);
   text-align: center;
   display: grid;
-  grid-template-columns: auto auto 100px;
+  grid-template-columns: auto auto 300px;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
@@ -38,13 +43,19 @@ const Wrapper = styled.nav`
     object-fit: cover;
   }
   button {
-    background: transparent;
     border: transparent;
     font-size: 1.2rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    background: var(--clr-primary-5);
+  color: var(--clr-primary-10);
     cursor: pointer;
+    margin-right:5px;
+    float:right;
+  }
+  div
+  {
+   
   }
 `;
 

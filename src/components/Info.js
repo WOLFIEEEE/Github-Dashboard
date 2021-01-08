@@ -3,6 +3,7 @@ import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
+import { AnimationWrapper } from 'react-hover-animation'
 
 const UserInfo = () => {
   const {GithubUser}=React.useContext(GithubContext)
@@ -19,9 +20,12 @@ const UserInfo = () => {
   <Wrapper className="section-center">
     {items.map((item)=>{
       // Interating Throughout the Items array
-      return <p>
+      return <AnimationWrapper
+      >
+      <p>
         <Item key={item.id} {...item}></Item>
       </p>
+      </AnimationWrapper>
     }
     )}
 
