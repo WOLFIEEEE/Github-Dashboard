@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { GithubContext } from '../context/context';
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
+import { AnimationWrapper } from 'react-hover-animation'
 const Repos = () => {
   const{repos} = React.useContext(GithubContext);   //using mockrepos
   const{userstars}=React.useContext(GithubContext); // using mockSTars
@@ -73,30 +74,14 @@ let { starss, forks } = repos.reduce(
 
 starss = Object.values(starss).slice(-5).reverse();
 forks = Object.values(forks).slice(-5).reverse();
-console.log(starss)
-
-  const chartData = [
-  
-    {
-      label: "C++",
-      value: "100"
-    },
-    {
-      label: "Python",
-      value: "30"
-    },
-    {
-      label: "Java",
-      value: "30"
-    }
-  ];
   return <section className='section'>
     <Wrapper className="section-center">
   {/* <ExampleChart data={chartData}></ExampleChart> */}
-  <Pie3D data={languages}></Pie3D>
-  <Column3D data={starss}></Column3D>
-  <Doughnut2D data={starlang}></Doughnut2D>
-  <Bar3D data={forks}></Bar3D>
+  <AnimationWrapper>
+  <Pie3D data={languages}></Pie3D></AnimationWrapper>
+  <AnimationWrapper><Column3D data={starss}></Column3D></AnimationWrapper>
+  <AnimationWrapper><Doughnut2D data={starlang}></Doughnut2D></AnimationWrapper>
+  <AnimationWrapper><Bar3D data={forks}></Bar3D></AnimationWrapper>
   </Wrapper>
   </section> 
 };

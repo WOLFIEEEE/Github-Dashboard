@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from './pages';
+import { Dashboard, Login, PrivateRoute, AuthWrapper, Error,Repodata } from './pages';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 
@@ -14,6 +14,9 @@ function App() {
       </PrivateRoute>
       <Route path="/login">
       <Login />
+      </Route>
+      <Route path="/Repodata">
+        <Repodata></Repodata>
       </Route>
       <Route path="*">
         <Error/>
