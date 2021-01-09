@@ -26,7 +26,8 @@ const Wrapper = styled.section`
   display: grid;
   place-items: center;
   img {
-    width: 150px;
+    width:auto;
+    height:auto;
   }
 `;
 

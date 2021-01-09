@@ -28,6 +28,7 @@ const ChartComponent =({data})=>{
     dataSource: {
       // Chart Configuration
       chart: {
+        theme: "candy",
         caption: "Most popular Repo",
         yAxisName:"stars",
         XAxixName:"Repos",

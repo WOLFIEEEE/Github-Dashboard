@@ -3,6 +3,7 @@ import mockUser from './mockData.js/mockUser';
 import mockRepos from './mockData.js/mockRepos';
 import mockFollowers from './mockData.js/mockFollowers';
 import mockStars from './mockData.js/mockStars';
+import mockFollowing from './mockData.js/mockFollowing'
 import axios from 'axios';
 
 const rootUrl = 'https://api.github.com';
@@ -14,6 +15,7 @@ const GithubProvider =({children})=>{
     const [repos, setRepos]=useState(mockRepos);
     const [followers, setFollowers]=useState(mockFollowers);
     const [userstars,setUserstars]=useState(mockStars);
+    const [following,setfollowing]=useState(mockFollowing)
 //Request Loading
     const[request,setRequest]=useState(0);
     const[isloading,setIsloading]=useState(false);
@@ -35,6 +37,8 @@ const GithubProvider =({children})=>{
         catch(err=> console.log(err));
         const Repos =await axios(`${rootUrl}/users/${user}/repos?per_page=100`).
         catch(err=> console.log(err));
+        const Following =await axios(`${rootUrl}/users/${user}/following`).
+        catch(err=> console.log(err));
         console.log(response.data)
         console.log(Followers.data)
         console.log(Stars.data)
@@ -45,6 +49,7 @@ const GithubProvider =({children})=>{
             setFollowers(Followers.data);
             setRepos(Repos.data);
             setUserstars(Stars.data);
+            setfollowing(Following.data);
         }    
         
         else
@@ -79,7 +84,7 @@ const GithubProvider =({children})=>{
 
     useEffect(checkRequest,[])
     return (
-    <GithubContext.Provider value={{GithubUser,repos,followers,userstars,request,error,searchGithubUser,isloading}}>
+    <GithubContext.Provider value={{GithubUser,repos,followers,userstars,request,error,searchGithubUser,isloading,following}}>
         {children}
     </GithubContext.Provider>
     )

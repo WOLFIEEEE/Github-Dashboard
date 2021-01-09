@@ -11,7 +11,6 @@ const Search = () => {
     if(user)
     {
       searchGithubUser(user);
-      setUser('');
     }
   }
   return(
@@ -48,8 +47,9 @@ const Wrapper = styled.div`
     }
   }
   .form-control {
-    background: var(--clr-white);
+    background: var(--clr-info-dark);
     display: grid;
+   
     align-items: center;
     grid-template-columns: auto 1fr auto;
     column-gap: 0.5rem;
@@ -57,15 +57,17 @@ const Wrapper = styled.div`
     padding: 0.5rem;
     input {
       border-color: transparent;
-      outline-color: var(--clr-grey-10);
+      outline-color: var(--clr-dark-1);
       letter-spacing: var(--spacing);
-      color: var(--clr-grey-3);
+      background-color:var(--clr-info-dark);
+      color:white;
       padding: 0.25rem 0.5rem;
     }
     input::placeholder {
-      color: var(--clr-grey-3);
+      
       text-transform: capitalize;
       letter-spacing: var(--spacing);
+      color:white;
     }
     button {
       border-radius: 5px;
@@ -90,6 +92,7 @@ const Wrapper = styled.div`
     button,
     svg {
       font-size: 1.3rem;
+      color:white;
     }
     @media (max-width: 800px) {
       button,

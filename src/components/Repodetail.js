@@ -2,14 +2,31 @@ import React from 'react';
 import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 import {Link, Router}  from "react-router-dom";
+import SearchField from "react-search-field";
 import Zoom from 'react-reveal/Zoom';
+import {useState} from 'react';
 
 const Repodetail = () => {
+  const [searchrepo,setSearchrepo]=useState('')
   const {repos}=React.useContext(GithubContext);
   return <div>
+    <div className="all">
+    <input type="text" placeholder="Search Repo.."  className="input" onChange={event=>{setSearchrepo(event.target.value)}}></input>
+    </div>
+    
     <div class="container">
                   <ul class="blog-post columns-2">
-      {repos.map((detail,index)=>
+      {repos.filter((detail)=>{
+      if(searchrepo=="")
+      {
+        return detail
+      }
+      else if(detail.name.toString().toLowerCase().includes(searchrepo.toString().toLowerCase()) )
+      {
+        return detail
+      }
+      })
+      .map((detail,index)=>
       {
         const {name,
             full_name,
