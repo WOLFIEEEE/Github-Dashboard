@@ -27,6 +27,7 @@ const GithubProvider =({children})=>{
 
     const searchGithubUser=async(user)=>
     {
+      
         toggleError();
         setIsloading(true)
         const response =await axios(`${rootUrl}/users/${user}`).
@@ -39,10 +40,6 @@ const GithubProvider =({children})=>{
         catch(err=> console.log(err));
         const Following =await axios(`${rootUrl}/users/${user}/following`).
         catch(err=> console.log(err));
-        console.log(response.data)
-        console.log(Followers.data)
-        console.log(Stars.data)
-        console.log(Repos.data)
         if(response)
         {
             setGithubUser(response.data);

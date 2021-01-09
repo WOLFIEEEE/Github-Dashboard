@@ -7,8 +7,10 @@ import Zoom from 'react-reveal/Zoom';
 import {useState} from 'react';
 
 const Followingdata = () => {
+  var a=0;
   const [searchfollowing,setsearchfollowing]=useState('')
   const {following}=React.useContext(GithubContext);
+  console.log(following)
   return <div>
     <div className="all">
     <input type="text" placeholder="Search Following"  className="input" onChange={event=>{setsearchfollowing(event.target.value)}}></input>
@@ -16,11 +18,14 @@ const Followingdata = () => {
     
     <div class="container">
                   <ul class="blog-post columns-2">
+        
       {following.filter((detail)=>{
+        
       if(searchfollowing=="")
       {
         return detail
       }
+      
       else if(detail.login.toString().toLowerCase().includes(searchfollowing.toString().toLowerCase()) )
       {
         return detail
@@ -28,10 +33,14 @@ const Followingdata = () => {
       })
       .map((detail,index)=>
       {
+        a=a+1;
         const {login,
             html_url,
             avatar_url:img,
             repos_url,}=detail;
+            if(a>0)
+            {
+              
         return <Zoom>
         <li>
         <article key={index}>
@@ -44,12 +53,15 @@ const Followingdata = () => {
           </div>
         </article>
         </li>
-        </Zoom> 
+        </Zoom>
+            }
       }
-      )}
+      )}      
+
     </ul>
     </div>
   </div>
+  
 };
 
 export default Followingdata;
