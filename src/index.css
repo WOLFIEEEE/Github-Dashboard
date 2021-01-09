@@ -142,19 +142,17 @@ p {
   text-transform: uppercase;
   background: var(--clr-primary-5);
   color: var(--clr-primary-10);
-  padding: 0.375rem 0.75rem;
+  padding: 0.3rem 0.5rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 400;
   transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
+  font-size: 0.5rem;
+  border: 1px solid transparent;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
   justify-content: space-between;
-  margin-right: 5px;
-  margin-left: -4px;
   margin-bottom: 5px;
 }
 .btn:hover {
@@ -324,16 +322,20 @@ ul.blog-post.columns-2 li {
 .dropdown {
   position: relative;
   display: inline-block;
+  float: left;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: #262A33;
+  width: fit-content;    
+  align-items: left;
+  text-align: left;   
+  justify-content: column;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  padding: 2px 2px;
+  z-index: 10;
 }
 
 .dropdown:hover .dropdown-content {
