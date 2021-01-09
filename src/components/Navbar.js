@@ -12,11 +12,19 @@ const Navbar = () => {
     {isUser && user.name && <h4>Welcome , <strong>{user.name}</strong></h4>}
     {isUser ? (
       <div>
-        <Link to="/" className="btn">Home</Link>
-        <Link to="/Repodata" className="btn">Repos</Link>
+        
+        <div class="dropdown">
+  <button className="btn">Menu</button>
+  <div class="dropdown-content">
+  <Link to="/" className="btn"> Back home  </Link>
+        <Link to="/Repodata" className="btn">repository</Link>
         <Link to="/Followerdetail" className="btn">Followers</Link>
         <Link to="/Followingdetail" className="btn">Following</Link>
-      <button className="btn" onClick={()=>{logout({returnTo:window.location.origin})}}>Logout</button>
+  </div>
+  <button className="btn" onClick={()=>{logout({returnTo:window.location.origin})}}>Logout</button>
+</div>
+       
+      
       </div>
     ):(
 <button onClick={loginWithRedirect}>Login</button>
@@ -43,17 +51,6 @@ const Wrapper = styled.nav`
     height: 35px;
     border-radius: 50%;
     object-fit: cover;
-  }
-  button {
-    border: transparent;
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    letter-spacing: var(--spacing);
-    background: var(--clr-primary-5);
-  color: var(--clr-primary-10);
-    cursor: pointer;
-    margin-right:5px;
-    float:right;
   }
   div
   {
