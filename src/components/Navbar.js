@@ -20,8 +20,8 @@ const Navbar = () => {
         <Link to="/Repodata" className="btn">repository</Link>
         <Link to="/Followerdetail" className="btn">Followers</Link>
         <Link to="/Followingdetail" className="btn">Following</Link>
+        <button className="btn" onClick={()=>{logout({returnTo:window.location.origin})}}>Sign Out</button>
   </div>
-  <button className="btn" onClick={()=>{logout({returnTo:window.location.origin})}}>Logout</button>
 </div>
        
       
