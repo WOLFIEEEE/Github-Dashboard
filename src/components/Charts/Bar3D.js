@@ -25,9 +25,11 @@ const ChartComponent =({data})=>{
     width: "100%", // Width of the chart
     height: "400", // Height of the chart
     dataFormat: "json", // Data type
+    
     dataSource: {
       // Chart Configuration
       chart: {
+        theme: "candy",
         caption: "Most Forked repo",
         yAxisName:"Forks",
         XAxixName:"Repos",

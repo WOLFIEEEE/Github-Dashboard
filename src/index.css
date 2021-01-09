@@ -36,7 +36,9 @@ Variables
   --clr-grey-7: hsl(211, 27%, 70%);
   --clr-grey-8: hsl(210, 31%, 80%);
   --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: #f1f5f8;
+  --clr-dark-12: #f1f5f8;
+  --clr-dark-1: #121212;
+  --clr-info-dark:#262A33;
   --clr-white: #fff;
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
@@ -68,7 +70,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: var(--clr-dark-1);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -93,6 +95,7 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
+  color: #BB86FC;
 }
 h1 {
   font-size: 3rem;
@@ -108,7 +111,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: #F2E7FE;
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -174,8 +177,8 @@ p {
   }
 }
 .loading-img {
-  width: 20rem;
-  height: 20rem;
+  width: 60%;
+  height: 60%;
   display: block;
   margin: 0 auto;
   margin-top: 10rem;
@@ -190,11 +193,19 @@ main {
   float: left;
 }
 
+
+
 *, *:before, *:after { @include box-sizing(border-box) }
 
 .container {
   margin: 2em 0;
   text-align: center;
+}
+.imgc{
+  float: left;
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 ul.blog-post {
@@ -209,7 +220,7 @@ ul.blog-post li {
 	padding: 1.5em;
   width: 400px;
 	margin: 0 0 2.5% 2.5%;
-	background: #fff;
+	background: var(--clr-info-dark);
 	border: 1px solid #eee;
 	font-size: 16px;
 	font-size: 1rem;
@@ -224,8 +235,8 @@ ul.blog-post li {
 ul.blog-post li h3 {
 	margin: 0.6em 0 0.6em;
   text-align: left!important;
-  font-family: Source Sans Pro, sans-serif;
-  color: #333;
+  font-family:monospace;
+  color: white;
   font-size: 1.4em;
   font-weight: 900;
   
@@ -288,3 +299,20 @@ ul.blog-post.columns-2 li {
 	}
 }
 
+/* search box in Repos css */
+.all
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.input{
+  margin-top: 20px;
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+
+}

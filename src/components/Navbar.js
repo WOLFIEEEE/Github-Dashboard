@@ -14,6 +14,8 @@ const Navbar = () => {
       <div>
         <Link to="/" className="btn">Home</Link>
         <Link to="/Repodata" className="btn">Repos</Link>
+        <Link to="/Followerdetail" className="btn">Followers</Link>
+        <Link to="/Followingdetail" className="btn">Following</Link>
       <button className="btn" onClick={()=>{logout({returnTo:window.location.origin})}}>Logout</button>
       </div>
     ):(
@@ -25,10 +27,10 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   padding: 1.5rem;
   margin-bottom: 4rem;
-  background: var(--clr-white);
+  background: var(--clr-info-dark);
   text-align: center;
   display: grid;
-  grid-template-columns: auto auto 300px;
+  grid-template-columns: auto auto auto;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;

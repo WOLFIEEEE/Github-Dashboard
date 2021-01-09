@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Info, Repos, User, Navbar ,Repodetail} from '../components';
+import { Info, Repos, User, Navbar ,Repodetail,Followerdata} from '../components';
 import { Link } from 'react-router-dom';
 import Search from 'react-search'
 
-const Repodata = () => {
+const Followerdetail = () => {
   return (
     <main>
       <Navbar></Navbar>
       <Info></Info>
-      <Repodetail></Repodetail>
+      <Followerdata></Followerdata>
     </main>
   );
 };
@@ -27,4 +27,4 @@ const Wrapper = styled.section`
     margin-bottom: 1.5rem;
   }
 `;
-export default Repodata;
+export default Followerdetail;

@@ -15,7 +15,7 @@ const Card = () => {
         </div>
         <a href={html_url}>follow</a>
       </header>
-      <p className="bio">{bio}</p>
+      <p >{bio}</p>
       <div className="Links">
         <p>
           <MdBusiness></MdBusiness>{company || ' me'}
@@ -23,13 +23,13 @@ const Card = () => {
         <p>
           <MdLocationOn></MdLocationOn>{location || 'earth'}
         </p>
-        <a href={blog}><MdLink></MdLink>{blog}</a>
+        <a href={blog} className="color"><MdLink></MdLink>{blog}</a>
       </div>
     </Wrapper>
   );
 };
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  background: var(--clr-info-dark);
   padding: 1.5rem 2rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
@@ -41,8 +41,8 @@ const Wrapper = styled.article`
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
-    color: var(--clr-grey-5);
+    background: black;
+    color: #BB86FC;
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
     text-transform: capitalize;

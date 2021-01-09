@@ -29,7 +29,7 @@ const ChartComponent =({data})=>{
       // Chart Configuration
       chart: {
         caption: "Languages",
-        theme: "fusion",
+        theme: "candy",
         decimals:0,
         pieRadius: "40%"
   
