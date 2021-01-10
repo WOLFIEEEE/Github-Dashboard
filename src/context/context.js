@@ -32,11 +32,11 @@ const GithubProvider =({children})=>{
         setIsloading(true)
         const response =await axios(`${rootUrl}/users/${user}`).
         catch(err=> console.log(err));
-        const Followers =await axios(`${rootUrl}/users/${user}/followers`).
+        const Followers =await axios(`${rootUrl}/users/${user}/followers?per_page=10000`).
         catch(err=> console.log(err));
         const Stars =await axios(`${rootUrl}/users/${user}/starred`).
         catch(err=> console.log(err));
-        const Repos =await axios(`${rootUrl}/users/${user}/repos?per_page=100`).
+        const Repos =await axios(`${rootUrl}/users/${user}/repos?per_page=1000`).
         catch(err=> console.log(err));
         const Following =await axios(`${rootUrl}/users/${user}/following`).
         catch(err=> console.log(err));
