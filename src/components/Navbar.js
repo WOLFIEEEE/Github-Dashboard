@@ -15,8 +15,8 @@ const Navbar = () => {
     <input className="menu-btn" type="checkbox" id="menu-btn" />
     <label className="menu-icon" htmlFor="menu-btn"><span className="nav-icon" /></label>
     <ul className="menu">
-     <li><Link > Back home  </Link></li>
-      <li><Link to="/Repodata" >repository</Link></li>
+     <li><Link to="/"> Back home  </Link></li>
+      <li><Link to="/Repodata" >Repos</Link></li>
       <li><Link to="/Followerdetail" >Followers</Link></li>
       <li><Link to="/Followingdetail" >Following</Link></li>
       <li> <a  href=""  onClick={()=>{logout({returnTo:window.location.origin})}}>Sign Out</a></li>
