@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Info, Repos, User, Navbar ,Repodetail} from '../components';
+import { Info, Repos, User, Navbar ,Repodetail,Footer} from '../components';
 import { Link } from 'react-router-dom';
 import Search from 'react-search'
 
@@ -10,6 +10,7 @@ const Repodata = () => {
       <Navbar></Navbar>
       <Info></Info>
       <Repodetail></Repodetail>
+      <Footer></Footer>
     </main>
   );
 };

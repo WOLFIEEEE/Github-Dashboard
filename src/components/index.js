@@ -6,5 +6,6 @@ import Navbar from "./Navbar";
 import Repodetail from "./Repodetail"
 import Followingdata from "./Followingdata"
 import Followerdata from "./Followerdata"
+import Footer from "./Footer"
 
-export { Info, Repos, User, Search, Navbar,Repodetail,Followerdata,Followingdata };
+export { Info, Repos, User, Search, Navbar,Repodetail,Followerdata,Followingdata ,Footer};
