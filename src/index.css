@@ -135,6 +135,13 @@ p {
   h4 {
     line-height: 1;
   }
+  .loading-img {
+    width: 5rem;
+    height: 10rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10rem;
+  }
 }
 /*  global classes */
 
