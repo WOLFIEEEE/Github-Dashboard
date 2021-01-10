@@ -401,7 +401,7 @@ ul.blog-post.columns-2 li {
 
 .header .menu-icon {
   cursor: pointer;
-  float: right;
+  float: left;
   padding: 28px 20px;
   position: relative;
   user-select: none;

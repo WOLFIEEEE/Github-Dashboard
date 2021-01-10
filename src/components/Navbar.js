@@ -10,10 +10,12 @@ const Navbar = () => {
   return (
     
     <header className="header">
+      <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <label className="menu-icon" htmlFor="menu-btn"><span className="nav-icon" /></label>
     {isUser && user.name && <h4 className="text"><span>Welcome , <strong>{user.name}</strong></span></h4>}
                 {isUser && user.picture && <img className="img" src={user.picture} ></img>}
-    <input className="menu-btn" type="checkbox" id="menu-btn" />
-    <label className="menu-icon" htmlFor="menu-btn"><span className="nav-icon" /></label>
+  
+   
     <ul className="menu">
      <li><Link to="/"> Back home  </Link></li>
       <li><Link to="/Repodata" >Repos</Link></li>
