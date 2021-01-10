@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info, Repos, User, Search, Navbar } from '../components';
+import { Info, Repos, User, Search, Navbar,Footer } from '../components';
 import loadingImage from '../images/preloader.gif';
 import { GithubContext } from '../context/context';
 const Dashboard = () => {
@@ -9,7 +9,7 @@ const Dashboard = () => {
       <main>
         <Navbar />
         <Search />
-        <img src={loadingImage} alt='loding' />
+        <img src={loadingImage} className="loading-img" alt='loding' />
       </main>
     );
   }
@@ -20,6 +20,7 @@ const Dashboard = () => {
       <Info />
       <User />
       <Repos />
+      <Footer/>
     </main>
   );
 };

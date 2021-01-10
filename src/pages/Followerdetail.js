@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Info, Repos, User, Navbar ,Repodetail,Followerdata} from '../components';
+import { Info, Repos, User, Navbar ,Repodetail,Followerdata,Footer} from '../components';
 import { Link } from 'react-router-dom';
 import Search from 'react-search'
 
@@ -10,6 +10,7 @@ const Followerdetail = () => {
       <Navbar></Navbar>
       <Info></Info>
       <Followerdata></Followerdata>
+      <Footer></Footer>
     </main>
   );
 };
