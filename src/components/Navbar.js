@@ -8,29 +8,20 @@ const Navbar = () => {
   const isUser= isAuthenticated && user;
   console.log(isAuthenticated,user,isLoading)
   return (
-    <div>
-        <nav className="sticky navbar">
-          <div className="brand  display__logo">
-            <a href="#top" className="nav__link"> <span className="logo">
-            {isUser && user.name && <h4 className="text"><span>Welcome , <strong>{user.name}</strong></span></h4>}
+    
+    <header className="header">
+    {isUser && user.name && <h4 className="text"><span>Welcome , <strong>{user.name}</strong></span></h4>}
                 {isUser && user.picture && <img className="img" src={user.picture} ></img>}
-              </span></a>
-          </div>
-          <input type="checkbox" id="nav" className="hidden" />
-          <label htmlFor="nav" className="nav__open"><i /><i /><i /></label>
-          <div className="nav">
-            <ul className="nav__items">
-            <li className="nav__item"><Link to="/" className="nav__link">Home</Link></li>
-           
-            <li className="nav__item"><Link to="/Followerdetail" className="nav__link">Follower</Link></li>
-            <li className="nav__item"><Link to="/Followingdetail" className="nav__link">Following</Link></li>
-            <li className="nav__item"><Link to="/Repodata" className="nav__link">Repos</Link></li>
-              <li className="nav__item"> <a className="nav__link" href=""  onClick={()=>{logout({returnTo:window.location.origin})}}>Sign Out</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-
+    <input className="menu-btn" type="checkbox" id="menu-btn" />
+    <label className="menu-icon" htmlFor="menu-btn"><span className="nav-icon" /></label>
+    <ul className="menu">
+     <li><Link > Back home  </Link></li>
+      <li><Link to="/Repodata" >repository</Link></li>
+      <li><Link to="/Followerdetail" >Followers</Link></li>
+      <li><Link to="/Followingdetail" >Following</Link></li>
+      <li> <a  href=""  onClick={()=>{logout({returnTo:window.location.origin})}}>Sign Out</a></li>
+    </ul>
+  </header>
 //   <Wrapper>
 //     {isUser && user.picture && <img src={user.picture} alt={user.name}></img>}
 //     {isUser && user.name && <h4>Welcome , <strong>{user.name}</strong></h4>}

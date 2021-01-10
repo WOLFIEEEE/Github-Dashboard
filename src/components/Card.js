@@ -37,7 +37,7 @@ const Wrapper = styled.article`
   position: relative;
   &::before {
     content: 'user';
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     transform: translateY(-100%);
